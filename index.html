@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUMA · Soluções Digitais | Digitalizamos o teu negócio</title>
+  <meta name="description" content="Criamos websites, aplicações e automações à medida do teu negócio, com atenção ao design, à funcionalidade e à experiência de quem os utiliza. Moçambique.">
+  <meta name="theme-color" content="#0E0E0E">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AUMA · Soluções Digitais">
+  <meta property="og:description" content="Digitalizamos o teu negócio. Simplificamos o teu dia. Websites, aplicações e automações em Moçambique.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="01_AUMA_Main_Logo_Black.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Fixed Scroll-Driven Canvas Animation -->
+  <canvas id="animation-canvas" aria-hidden="true"></canvas>
+  <div class="hero-canvas-scrim" aria-hidden="true"></div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <a href="#hero" class="brand-logo" aria-label="AUMA - Início">
+        <img src="auma-logo-white-text.png" alt="AUMA" class="logo-img" width="130" height="42">
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link" data-i18n="nav.home">Início</a></li>
+          <li><a href="#services" class="nav-link" data-i18n="nav.services">Serviços</a></li>
+          <li><a href="#portfolio" class="nav-link" data-i18n="nav.projects">Projectos</a></li>
+          <li><a href="#about" class="nav-link" data-i18n="nav.about">Sobre</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Language Switcher -->
+        <div class="lang-switch" role="group" aria-label="Selector de idioma">
+          <button type="button" class="lang-btn active" id="lang-pt" data-lang="pt" aria-pressed="true">PT</button>
+          <span class="lang-divider">|</span>
+          <button type="button" class="lang-btn" id="lang-en" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+
+        <a href="#contact" class="btn btn-primary btn-header" data-i18n="btn.discussProject">Falar sobre o meu projecto</a>
+
+        <!-- Mobile Menu Toggle -->
+        <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <ul class="mobile-nav-links">
+        <li><a href="#hero" class="mobile-nav-link" data-i18n="nav.home">Início</a></li>
+        <li><a href="#services" class="mobile-nav-link" data-i18n="nav.services">Serviços</a></li>
+        <li><a href="#portfolio" class="mobile-nav-link" data-i18n="nav.projects">Projectos</a></li>
+        <li><a href="#about" class="mobile-nav-link" data-i18n="nav.about">Sobre</a></li>
+        <li><a href="#contact" class="mobile-nav-link" data-i18n="nav.contact">Contacto</a></li>
+      </ul>
+      <div class="mobile-nav-actions">
+        <div class="lang-switch-mobile" role="group" aria-label="Selector de idioma">
+          <button type="button" class="lang-btn active" data-lang="pt">PT</button>
+          <span class="lang-divider">|</span>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <a href="#contact" class="btn btn-primary btn-block" data-i18n="btn.discussProject">Falar sobre o meu projecto</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Flow (On Top of Animation) -->
+  <main class="page-content">
+    
+    <!-- Hero Section -->
+    <section class="section section-hero" id="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="eyebrow-badge">
+            <span class="badge-dot"></span>
+            <span class="eyebrow-text" data-i18n="hero.eyebrow">AUMA · SOLUÇÕES DIGITAIS</span>
+          </div>
+
+          <h1 class="hero-headline" data-i18n="hero.headline">
+            Digitalizamos o teu negócio.<br>
+            <span class="text-purple">Simplificamos o teu dia.</span>
+          </h1>
+
+          <!-- Mobile Visual Slot: preserves character face between headline and body on small screens -->
+          <div class="hero-visual-slot-mobile" aria-hidden="true"></div>
+
+          <p class="hero-supporting" data-i18n="hero.supporting">
+            Criamos websites, aplicações e automações à medida do teu negócio, com atenção ao design, à funcionalidade e à experiência de quem os utiliza.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn btn-primary" data-i18n="btn.discussProject">Falar sobre o meu projecto</a>
+            <a href="#services" class="btn btn-secondary" data-i18n="btn.exploreSolutions">Explorar soluções</a>
+          </div>
+        </div>
+
+        <!-- Desktop visual slot to maintain layout balance -->
+        <div class="hero-visual-slot-desktop" aria-hidden="true"></div>
+      </div>
+
+      <!-- Subtle scroll down cue -->
+      <a href="#benefits" class="scroll-cue" aria-label="Rolar para baixo">
+        <span class="scroll-cue-mouse">
+          <span class="scroll-cue-wheel"></span>
+        </span>
+      </a>
+    </section>
+
+    <!-- Four-Benefit Strip -->
+    <section class="section section-benefits" id="benefits">
+      <div class="container">
+        <div class="benefits-grid">
+          
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="benefit-title" data-i18n="benefits.b1.title">Em qualquer ecrã</h3>
+            <p class="benefit-desc" data-i18n="benefits.b1.desc">Uma experiência cuidada no telemóvel, tablet e computador.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="benefit-title" data-i18n="benefits.b2.title">Desempenho cuidado</h3>
+            <p class="benefit-desc" data-i18n="benefits.b2.desc">Páginas leves e interacções fluidas para facilitar a utilização.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3 class="benefit-title" data-i18n="benefits.b3.title">Uma base sólida</h3>
+            <p class="benefit-desc" data-i18n="benefits.b3.desc">Boas práticas de desenvolvimento, validação e organização dos dados.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+            </div>
+            <h3 class="benefit-title" data-i18n="benefits.b4.title">À medida do negócio</h3>
+            <p class="benefit-desc" data-i18n="benefits.b4.desc">Funcionalidades pensadas para as necessidades de cada projecto.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section section-services" id="services">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="eyebrow-badge">
+            <span class="badge-dot"></span>
+            <span class="eyebrow-text" data-i18n="services.eyebrow">O QUE FAZEMOS</span>
+          </div>
+          <h2 class="section-heading" data-i18n="services.heading">Da tua ideia a uma solução que funciona.</h2>
+          <p class="section-intro" data-i18n="services.intro">
+            Combinamos design de interfaces e desenvolvimento para criar ferramentas úteis, intuitivas e preparadas para evoluir.
+          </p>
+        </div>
+
+        <div class="services-layout">
+          <!-- Services List -->
+          <div class="services-list">
+            
+            <article class="service-card" tabindex="0">
+              <div class="service-number">01</div>
+              <div class="service-body">
+                <h3 class="service-title" data-i18n="services.s1.title">Websites e landing pages</h3>
+                <p class="service-desc" data-i18n="services.s1.desc">Apresenta a tua marca, os teus serviços e as formas de entrar em contacto.</p>
+              </div>
+            </article>
+
+            <article class="service-card" tabindex="0">
+              <div class="service-number">02</div>
+              <div class="service-body">
+                <h3 class="service-title" data-i18n="services.s2.title">Aplicações web e sistemas de gestão</h3>
+                <p class="service-desc" data-i18n="services.s2.desc">Organiza informação e tarefas numa solução adaptada à tua operação.</p>
+              </div>
+            </article>
+
+            <article class="service-card" tabindex="0">
+              <div class="service-number">03</div>
+              <div class="service-body">
+                <h3 class="service-title" data-i18n="services.s3.title">Integrações e APIs</h3>
+                <p class="service-desc" data-i18n="services.s3.desc">Liga ferramentas e sistemas para que a informação circule com menos trabalho manual.</p>
+              </div>
+            </article>
+
+            <article class="service-card" tabindex="0">
+              <div class="service-number">04</div>
+              <div class="service-body">
+                <h3 class="service-title" data-i18n="services.s4.title">Automação de processos</h3>
+                <p class="service-desc" data-i18n="services.s4.desc">Simplifica tarefas repetitivas e reduz passos desnecessários no dia-a-dia.</p>
+              </div>
+            </article>
+
+            <article class="service-card" tabindex="0">
+              <div class="service-number">05</div>
+              <div class="service-body">
+                <h3 class="service-title" data-i18n="services.s5.title">Manutenção e evolução</h3>
+                <p class="service-desc" data-i18n="services.s5.desc">Mantém a solução actualizada e acrescenta funcionalidades conforme o negócio cresce.</p>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- Illustrative Interface Composition Inspired by Reference -->
+          <div class="services-preview-panel" aria-hidden="true">
+            <div class="preview-mockup-window">
+              <div class="mockup-header">
+                <div class="mockup-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <div class="mockup-title">auma.stack.architecture.ts</div>
+              </div>
+              <div class="mockup-content">
+                <div class="mockup-code">
+                  <span class="code-comment">// AUMA · Soluções Digitais</span><br>
+                  <span class="code-keyword">interface</span> <span class="code-type">DigitalSolution</span> {<br>
+                  &nbsp;&nbsp;frontend: <span class="code-string">"Modern, fast & responsive"</span>;<br>
+                  &nbsp;&nbsp;backend: <span class="code-string">"Secure, scalable APIs"</span>;<br>
+                  &nbsp;&nbsp;operations: <span class="code-string">"Automated workflows"</span>;<br>
+                  &nbsp;&nbsp;care: <span class="code-string">"Direct client communication"</span>;<br>
+                  }<br><br>
+                  <span class="code-keyword">const</span> <span class="code-var">deliverSolution</span> = () =&gt; ({<br>
+                  &nbsp;&nbsp;focus: <span class="code-string">"Your core business"</span>,<br>
+                  &nbsp;&nbsp;technicalWork: <span class="code-string">"Taken care of by AUMA"</span>,<br>
+                  &nbsp;&nbsp;status: <span class="code-type">"Optimal"</span><br>
+                  });
+                </div>
+
+                <div class="mockup-metrics">
+                  <div class="metric-chip">
+                    <span class="metric-label">Frontend + Backend</span>
+                    <span class="metric-val">Ponta a ponta</span>
+                  </div>
+                  <div class="metric-chip">
+                    <span class="metric-label">Qualidade de Código</span>
+                    <span class="metric-val">Clean & Mantível</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section section-portfolio" id="portfolio">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="eyebrow-badge">
+            <span class="badge-dot"></span>
+            <span class="eyebrow-text" data-i18n="portfolio.eyebrow">PORTFÓLIO</span>
+          </div>
+          <h2 class="section-heading" data-i18n="portfolio.heading">Tecnologia posta em prática.</h2>
+          <p class="section-intro" data-i18n="portfolio.intro">
+            Uma selecção de projectos técnicos e experiências de desenvolvimento que mostram como trabalhamos.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          
+          <!-- Project 1: Online Tutor Platform -->
+          <article class="project-card">
+            <div class="project-card-header">
+              <span class="project-tag" data-i18n="portfolio.p1.category">Projecto académico · Anterior à AUMA</span>
+              <h3 class="project-title" data-i18n="portfolio.p1.title">Plataforma de preparação para exames</h3>
+            </div>
+
+            <p class="project-desc" data-i18n="portfolio.p1.desc">
+              Webservice desenvolvido para apoiar estudantes moçambicanos na preparação para exames nacionais, recorrendo a modelos de linguagem.
+            </p>
+
+            <div class="project-stack">
+              <span class="stack-badge">Python</span>
+              <span class="stack-badge">LLM Integration</span>
+              <span class="stack-badge">Webservice API</span>
+              <span class="stack-badge">Education Tech</span>
+            </div>
+
+            <div class="project-footer">
+              <a href="https://github.com/radQueen258/onlineTutor" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span data-i18n="portfolio.viewRepo">Ver no GitHub</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2: BankOps Monitoring (With Authentic Grafana Screenshot) -->
+          <article class="project-card">
+            <div class="project-media-wrap">
+              <img src="bankops-grafana.png" alt="BankOps Monitoring Grafana Dashboard" class="project-img" loading="lazy">
+              <div class="project-media-overlay"></div>
+            </div>
+
+            <div class="project-card-header">
+              <span class="project-tag" data-i18n="portfolio.p2.category">Projecto técnico de demonstração · Anterior à AUMA</span>
+              <h3 class="project-title" data-i18n="portfolio.p2.title">BankOps Monitoring</h3>
+            </div>
+
+            <p class="project-desc" data-i18n="portfolio.p2.desc">
+              Ambiente de demonstração para acompanhar disponibilidade, pedidos, erros e tempos de resposta de uma API.
+            </p>
+
+            <div class="project-stack">
+              <span class="stack-badge">FastAPI</span>
+              <span class="stack-badge">PostgreSQL</span>
+              <span class="stack-badge">Docker</span>
+              <span class="stack-badge">Prometheus</span>
+              <span class="stack-badge">Grafana</span>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- About & Process Section -->
+    <section class="section section-about" id="about">
+      <div class="container">
+        
+        <div class="about-hero-block">
+          <div class="eyebrow-badge">
+            <span class="badge-dot"></span>
+            <span class="eyebrow-text" data-i18n="about.eyebrow">SOBRE A AUMA</span>
+          </div>
+          <h2 class="section-heading" data-i18n="about.heading">Uma equipa próxima. Uma solução bem pensada.</h2>
+          <p class="about-body-copy" data-i18n="about.copy">
+            Na AUMA, juntamos frontend e backend para desenvolver soluções digitais de ponta a ponta. Valorizamos a comunicação clara, a atenção ao detalhe e ferramentas que fazem sentido para quem as utiliza.
+          </p>
+        </div>
+
+        <div class="process-wrapper">
+          <h3 class="process-section-title" data-i18n="about.processTitle">O Nosso Processo</h3>
+          
+          <div class="process-grid">
+            
+            <div class="process-step-card">
+              <div class="step-num">01</div>
+              <h4 class="step-title" data-i18n="about.step1.title">Compreender</h4>
+              <p class="step-desc" data-i18n="about.step1.desc">Conversamos sobre o negócio, os desafios e o que é prioritário.</p>
+            </div>
+
+            <div class="process-step-card">
+              <div class="step-num">02</div>
+              <h4 class="step-title" data-i18n="about.step2.title">Planear</h4>
+              <p class="step-desc" data-i18n="about.step2.desc">Definimos o âmbito, as funcionalidades e as etapas do projecto.</p>
+            </div>
+
+            <div class="process-step-card">
+              <div class="step-num">03</div>
+              <h4 class="step-title" data-i18n="about.step3.title">Desenvolver</h4>
+              <p class="step-desc" data-i18n="about.step3.desc">Criamos, testamos e ajustamos a solução com acompanhamento.</p>
+            </div>
+
+            <div class="process-step-card">
+              <div class="step-num">04</div>
+              <h4 class="step-title" data-i18n="about.step4.title">Entregar e acompanhar</h4>
+              <p class="step-desc" data-i18n="about.step4.desc">Preparamos o lançamento e combinamos os próximos passos de manutenção.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Call To Action Section -->
+    <section class="section section-contact" id="contact">
+      <div class="container">
+        
+        <div class="contact-card">
+          <div class="contact-header">
+            <div class="eyebrow-badge">
+              <span class="badge-dot"></span>
+              <span class="eyebrow-text" data-i18n="contact.eyebrow">VAMOS CONVERSAR</span>
+            </div>
+            <h2 class="contact-heading" data-i18n="contact.heading">O próximo passo do teu negócio pode começar aqui.</h2>
+            <p class="contact-supporting" data-i18n="contact.supporting">
+              Conta-nos o que queres criar ou simplificar. Vamos perceber contigo qual é a solução adequada.
+            </p>
+          </div>
+
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-grid">
+              
+              <div class="form-field">
+                <label for="contact-name" class="field-label">
+                  <span data-i18n="form.name">Nome</span> <span class="required">*</span>
+                </label>
+                <input type="text" id="contact-name" name="name" class="field-input" required autocomplete="name" placeholder="O teu nome">
+                <span class="field-error" id="name-error" data-i18n="form.errName">Por favor, indica o teu nome.</span>
+              </div>
+
+              <div class="form-field">
+                <label for="contact-email" class="field-label">
+                  <span data-i18n="form.email">Email</span> <span class="required">*</span>
+                </label>
+                <input type="email" id="contact-email" name="email" class="field-input" required autocomplete="email" placeholder="exemplo@empresa.com">
+                <span class="field-error" id="email-error" data-i18n="form.errEmail">Por favor, indica um email válido.</span>
+              </div>
+
+              <div class="form-field full-width">
+                <label for="contact-company" class="field-label">
+                  <span data-i18n="form.company">Empresa</span> <span class="optional" data-i18n="form.optional">(opcional)</span>
+                </label>
+                <input type="text" id="contact-company" name="company" class="field-input" autocomplete="organization" placeholder="Nome da tua empresa ou marca">
+              </div>
+
+              <div class="form-field full-width">
+                <label for="contact-message" class="field-label">
+                  <span data-i18n="form.message">O que gostarias de criar ou melhorar?</span> <span class="required">*</span>
+                </label>
+                <textarea id="contact-message" name="message" class="field-textarea" rows="4" required placeholder="Explica em poucas palavras o teu projecto, ideia ou desafio actual..."></textarea>
+                <span class="field-error" id="message-error" data-i18n="form.errMessage">Por favor, descreve o que pretendes desenvolver.</span>
+              </div>
+
+            </div>
+
+            <!-- Form Status Notice -->
+            <div class="form-notice" id="form-notice" role="status" aria-live="polite"></div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+                <span class="btn-text" data-i18n="btn.submitForm">Enviar pedido</span>
+                <span class="btn-spinner" aria-hidden="true"></span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Final Reassurance Strip -->
+    <section class="section section-reassurance" aria-label="Garantias de trabalho">
+      <div class="container">
+        <div class="reassurance-grid">
+          
+          <div class="reassurance-item">
+            <svg class="reassurance-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span class="reassurance-text" data-i18n="reassurance.r1">Design responsivo</span>
+          </div>
+
+          <div class="reassurance-item">
+            <svg class="reassurance-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span class="reassurance-text" data-i18n="reassurance.r2">Desenvolvimento à medida</span>
+          </div>
+
+          <div class="reassurance-item">
+            <svg class="reassurance-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span class="reassurance-text" data-i18n="reassurance.r3">Comunicação clara</span>
+          </div>
+
+          <div class="reassurance-item">
+            <svg class="reassurance-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span class="reassurance-text" data-i18n="reassurance.r4">Acompanhamento após o lançamento</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="brand-logo" aria-label="AUMA - Início">
+            <img src="auma-logo-white-text.png" alt="AUMA" class="logo-img" width="120" height="38">
+          </a>
+          <p class="footer-slogan" data-i18n="footer.slogan">
+            Websites, aplicações e automação à medida do teu negócio.
+          </p>
+          <div class="footer-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span data-i18n="footer.location">Moçambique.</span>
+          </div>
+        </div>
+
+        <nav class="footer-nav" aria-label="Navegação de rodapé">
+          <div class="footer-nav-col">
+            <h4 class="footer-nav-title" data-i18n="footer.navTitle">Navegação</h4>
+            <ul class="footer-links">
+              <li><a href="#hero" data-i18n="nav.home">Início</a></li>
+              <li><a href="#services" data-i18n="nav.services">Serviços</a></li>
+              <li><a href="#portfolio" data-i18n="nav.projects">Projectos</a></li>
+              <li><a href="#about" data-i18n="nav.about">Sobre</a></li>
+              <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-nav-col">
+            <h4 class="footer-nav-title" data-i18n="footer.channelsTitle">Canais</h4>
+            <ul class="footer-links">
+              <li><a href="https://github.com/radQueen258" target="_blank" rel="noopener noreferrer">GitHub · radQueen258</a></li>
+              <li><a href="#contact" data-i18n="footer.formLink">Formulário de contacto</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; <span id="current-year">2026</span> AUMA. <span data-i18n="footer.rights">Todos os direitos reservados.</span>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
