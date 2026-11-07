@@ -11,7 +11,7 @@
   // ==========================================================================
   const AUMA_CONFIG = {
     officialName: 'AUMA · Soluções Digitais',
-    email: 'contacto@auma.mz', // Official enquiry email address
+    email: 'contact.aumadigital@gmail.com', // Official enquiry email address
     whatsapp: '',              // Official WhatsApp number (to be configured)
     github: 'https://github.com/radQueen258',
     onlineTutorRepo: 'https://github.com/radQueen258/onlineTutor',
@@ -337,10 +337,10 @@
 
   function getMaxScroll() {
     const docHeight = Math.max(
-      document.body.scrollHeight,
-      document.documentElement.scrollHeight,
-      document.body.offsetHeight,
-      document.documentElement.offsetHeight
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.offsetHeight
     );
     const max = docHeight - window.innerHeight;
     return max > 10 ? max : 1;
@@ -406,25 +406,17 @@
       dx = Math.min(dx, cw - dw); // Ensure right edge fits
       dy = 0;
     } else {
-      // Mobile / Tablet: Centered layout aligned to mobile visual slot
-      // Ensuring face, glasses and pose are fully visible without text overlap
-      const slot = document.querySelector('.hero-visual-slot-mobile');
-      if (slot) {
-        const rect = slot.getBoundingClientRect();
-        dh = Math.max(rect.height * 1.32, 380);
-        dw = dh * imgAspect;
-        dx = (cw - dw) / 2;
-        dy = rect.top - (dh * 0.06);
-      } else {
-        dh = ch * 0.58;
-        dw = dh * imgAspect;
-        dx = (cw - dw) / 2;
-        dy = ch * 0.22;
-      }
+      // Mobile / Tablet: Centered fixed layout in the viewport
+      // Sized and positioned so her face is framed cleanly below the hero headline,
+      // and remains visible through transparent glass cards throughout scroll.
+      dh = Math.min(ch * 0.78, 620);
+      dw = dh * imgAspect;
+      dx = (cw - dw) / 2;
+      dy = Math.min(Math.max(ch * 0.24, 160), 210);
     }
 
-    // Near-black background #0E0E0E matches site theme
-    ctx.fillStyle = '#0E0E0E';
+    // Pure black background #000000 ensures screen mix-blend-mode is 100% transparent
+    ctx.fillStyle = '#000000';
     ctx.fillRect(0, 0, cw, ch);
     ctx.drawImage(img, dx, dy, dw, dh);
 
@@ -443,8 +435,8 @@
     }
 
     const frameIndex = Math.min(
-      TOTAL_FRAMES - 1,
-      Math.max(0, Math.round(currentProgress * (TOTAL_FRAMES - 1)))
+        TOTAL_FRAMES - 1,
+        Math.max(0, Math.round(currentProgress * (TOTAL_FRAMES - 1)))
     );
 
     renderFrame(frameIndex);
@@ -525,7 +517,7 @@
     // Save choice to localStorage
     try {
       localStorage.setItem('auma_lang', lang);
-    } catch (_) {}
+    } catch (_) { }
   }
 
   function getNestedTranslation(obj, path) {
@@ -537,7 +529,7 @@
     try {
       const stored = localStorage.getItem('auma_lang');
       if (stored === 'pt' || stored === 'en') saved = stored;
-    } catch (_) {}
+    } catch (_) { }
 
     setLanguage(saved);
 
@@ -683,10 +675,10 @@
         // Without an active endpoint, dispatch via mailto to official email without fabricating receipt
         const subject = encodeURIComponent(`Contacto AUMA: ${nameInput.value.trim()}`);
         const body = encodeURIComponent(
-          `Nome: ${nameInput.value.trim()}\n` +
-          `Email: ${emailInput.value.trim()}\n` +
-          `Empresa: ${companyInput.value.trim() || 'N/A'}\n\n` +
-          `Mensagem:\n${messageInput.value.trim()}`
+            `Nome: ${nameInput.value.trim()}\n` +
+            `Email: ${emailInput.value.trim()}\n` +
+            `Empresa: ${companyInput.value.trim() || 'N/A'}\n\n` +
+            `Mensagem:\n${messageInput.value.trim()}`
         );
 
         const mailtoUrl = `mailto:${AUMA_CONFIG.email}?subject=${subject}&body=${body}`;
